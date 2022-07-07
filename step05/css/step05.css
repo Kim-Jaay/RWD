@@ -36,17 +36,17 @@
     #header {position: absolute; top: 0; left: 0; width: 100%; line-height: 100px; z-index: 1;} 
     #header .container {display: flex; justify-content: space-between; margin: 0 80px;}
     
-    .gnb {position: fixed; top: 0; left: -100%; width: calc(100% - 90px); height: 100vh; background: white; border-right: 1px solid #ddd; padding: 100px 15px 0 15px; line-height: 40px; z-index: 1; transition: none;}
+    .gnb {position: fixed; top: 0; left: -100%; width: calc(100% - 90px); height: 100vh; background: white; border-right: 1px solid #ddd; padding: 100px 15px 0 15px; line-height: 40px; z-index: 1; transition: 0.5s;}
 
     .gnb.on {left: 0;}
 
     .gnb a {display: block;}
     .gnb>ul {display: flex; flex-direction: column; gap: 0; color: #444}
     .gnb>ul>li {position: relative; border-bottom: 1px solid #ddd;}
-    .gnb>ul>li .smenu { display: none; position: static; width: auto; text-align: center; transform: translateX(0); background: rgba(0,0,0,0.3); line-height: 40px; opacity: 1; visibility: visible; transition: 0.5s;}
-    
-    .gnb>ul>li:hover .smenu {top: 100px; opacity: 1; visibility: visible; transition: 0.5s;}
+    .gnb>ul>li .smenu { display: none; position: static; top: 150px; left: 50%; width: auto; text-align: center; transform: translateX(0); background: rgba(0,0,0,0.3); line-height: 40px; opacity: 1; visibility: visible; transition: none;}
 
+    .gnb>ul>li:hover .smenu {top: 120px; opacity: 1; visibility: visible; transition: none;}
+    
     .mbtn {display: block; position: fixed; top: 30px; right: 30px; padding: 5px; background: #f1f1f1; border-radius: 5px; font-size: 20px; }
 
     /* main_visual */
