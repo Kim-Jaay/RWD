@@ -15,5 +15,15 @@ $(function () {
         $('.sub_menu').removeAttr('style');
     });
 
+    $('.mclone').on('click', function () {
+        var siteMap = $('.gnb>ul').clone().addClass('container');
+        siteMap.appendTo($('body')).wrap('<div class="sitemap"></div>');
+        $('<i class="xi-close"></i>').appendTo(siteMap.parent())
+    });
+
+
+    $('.xi-close').on('click', function () {
+        console.log('click');
+    });
 
 })
