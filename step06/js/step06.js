@@ -1,29 +1,48 @@
 $(function () {
-    $('.gnb>ul>li>a').on('click', function (e) {
-        e.preventDefault();
-        $('.sub_menu').slideUp();
-        $(this).next().stop().slideToggle();
+
+    var closeBanner = () => {
+        $('.TopBanner').toggleClass('on');
+        //$('.TopBanner').slideToggle();
+        //document.querySelector('.TopBanner').classList.toggle('on')
+    }
+    $('.TopBanner i').on('click', closeBanner);
+
+    $('.MainSlider').slick({
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
     });
 
-
-    $('.mbtn').on('click', function () {
-        $('.gnb').toggleClass('on');
+    $('.ProductSlider').slick({
+        arrows: false,
+        slidesToShow: 5,
+        responsive: [
+            {
+                breakpoint: 1230,
+                settings: {
+                    slidesToShow: 1,
+                    dots: true
+                }
+            }
+        ]
     });
 
-    $(window).on('resize', function () {
-        $('.gnb').removeClass('on')
-        $('.sub_menu').removeAttr('style');
-    });
+    //e.currentTarget
 
-    $('.mclone').on('click', function () {
-        var siteMap = $('.gnb>ul').clone().addClass('container');
-        siteMap.appendTo($('body')).wrap('<div class="sitemap"></div>');
-        $('<i class="xi-close"></i>').appendTo(siteMap.parent())
-    });
+    function toggleClass() {
+        $('.pop li').toggleClass('on');
+        $('.Footer .popup').toggleClass('on');
+    }
 
+    $('.pop li').on('click', toggleClass);
+    $('.popup i').on('click', toggleClass);
 
-    $('.xi-close').on('click', function () {
-        console.log('click');
-    });
+    function mopen() {
+        $(this).toggleClass('on');
+        $('.Gnb').toggleClass('on');
+    }
+
+    $('.mopen').on('click', mopen)
 
 })
